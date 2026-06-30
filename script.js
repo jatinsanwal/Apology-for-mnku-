@@ -585,3 +585,60 @@ document.addEventListener("dblclick",()=>{
 secretLovePopup();
 
 });
+/* ==========================
+   FINAL FINISH BUTTON
+========================== */
+
+const nextButtons = document.querySelectorAll(".nextBtn");
+
+nextButtons.forEach((btn,index)=>{
+
+    btn.addEventListener("click",()=>{
+
+        const pages=document.querySelectorAll(".page");
+
+        if(index<pages.length-1){
+
+            pages[index].classList.remove("active");
+            pages[index+1].classList.add("active");
+
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+
+        }else{
+
+            finishWebsite();
+
+        }
+
+    });
+
+});
+
+const prevButtons=document.querySelectorAll(".prevBtn");
+
+prevButtons.forEach((btn,index)=>{
+
+    btn.addEventListener("click",()=>{
+
+        const pages=document.querySelectorAll(".page");
+
+        pages[index+1].classList.remove("active");
+
+        pages[index].classList.add("active");
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    });
+
+});
+function finishWebsite(){
+
+    alert("❤️ Thank You Manku ❤️");
+
+}
