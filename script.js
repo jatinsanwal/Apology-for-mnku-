@@ -108,3 +108,119 @@ playing=true;
 }
 
 };
+/* =====================================
+      PAGE NAVIGATION SYSTEM
+===================================== */
+
+const pages = document.querySelectorAll(".page");
+const nextButtons = document.querySelectorAll(".nextBtn");
+const prevButtons = document.querySelectorAll(".prevBtn");
+
+let currentPage = 0;
+
+function showPage(index){
+
+pages.forEach((page)=>{
+
+page.classList.remove("active");
+
+});
+
+pages[index].classList.add("active");
+
+currentPage=index;
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+
+/* NEXT */
+
+nextButtons.forEach((button)=>{
+
+button.addEventListener("click",()=>{
+
+if(currentPage<pages.length-1){
+
+showPage(currentPage+1);
+
+}
+
+});
+
+});
+
+
+/* PREVIOUS */
+
+prevButtons.forEach((button)=>{
+
+button.addEventListener("click",()=>{
+
+if(currentPage>0){
+
+showPage(currentPage-1);
+
+}
+
+});
+
+});
+
+
+
+showPage(0);
+
+
+
+
+
+/* =====================================
+        HEART CLICK EFFECT
+===================================== */
+
+document.addEventListener("click",(e)=>{
+
+const heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+
+heart.style.left=e.clientX+"px";
+
+heart.style.top=e.clientY+"px";
+
+heart.style.fontSize="28px";
+
+heart.style.pointerEvents="none";
+
+heart.style.zIndex="99999";
+
+heart.style.transition="1.2s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.style.transform="translateY(-120px) scale(2)";
+
+heart.style.opacity="0";
+
+},50);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},1200);
+
+});
