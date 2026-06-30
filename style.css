@@ -265,21 +265,13 @@ LETTER
 ========================== */
 
 .letter{
-
     font-size:22px;
-
-    line-height: 2.15;
-
-    margin-top:35px;
-
-    margin-bottom:35px;
-
+    line-height:2;
+    margin-top:18px;
+    margin-bottom:18px;
     color:#444;
-
     text-align:center;
-
     white-space:pre-line;
-
 }
 
 
