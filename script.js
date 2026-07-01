@@ -141,48 +141,6 @@ behavior:"smooth"
 }
 
 
-
-/* NEXT */
-
-nextButtons.forEach((button)=>{
-
-button.addEventListener("click",()=>{
-
-if(currentPage<pages.length-1){
-
-showPage(currentPage+1);
-
-}
-
-});
-
-});
-
-
-/* PREVIOUS */
-
-prevButtons.forEach((button)=>{
-
-button.addEventListener("click",()=>{
-
-if(currentPage>0){
-
-showPage(currentPage-1);
-
-}
-
-});
-
-});
-
-
-
-showPage(0);
-
-
-
-
-
 /* =====================================
         HEART CLICK EFFECT
 ===================================== */
